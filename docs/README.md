@@ -1,114 +1,68 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+📢
 
-# APP NAME
+# Bullets Diagramation
 
-<!-- DOCS-IGNORE:start -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- DOCS-IGNORE:end -->
+Elemento de contexto que muestra los niveles inferiores de navegación dentro de una lista de viñetas con imágenes.
 
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
+![WhatsappButton](/docs/bullet_component.png)
 
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
+## Configuration
 
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+### Paso 1: Clonar Proyecto
 
-## Configuration 
+Clonar [este](https://github.com/marya277/itgloberspartnercl.bullets-diagramation) repositorio en tu computador.
 
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
+#### Paso 2 : Editar el Manifest.json
 
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
+Una vez clonado el repositorio debe configurar el `Manifest.json` partiendo por:
 
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
+- vendor
+- name
+- title
+- version
 
-Next, add the **props table** containing your block's props. 
+Ej:
 
-If the app exports more than one block, create several tables - one for each block. For example:
+     "vendor": "itgloberspartnercl",
+     "name": "bullets-diagramation",
+     "version": "0.0.1",
+     "title": "bullets-diagramation",
+     "description": "Es un contexto de elementos que se renderizaran los niveles inferiores de navegación dentro de una lista de bullets con imagenes",
 
-### `block-1` props
+",
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+De igual manera debe configurar los archivos `package.json` con su `name` y `versión`
 
+Comprobar que el proyecto cuenta con todas las builders y dependencias necesarias. Este proyecto funciona con:
+"builders": {
+"react": "3.x",
+"messages": "1.x",
+"docs": "0.x",
+"store": "0.x"
+},
 
-### `block-2` props
+"dependencies": {
+"vtex.native-types": "0.x",
+"vtex.list-context": "0.x",
+"vtex.device-detector": "0.x",
+"vtex.css-handles": "0.x"
+},
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+### Paso 3: Instalar node-modules
 
-Prop types are: 
+Por medio del terminal acceda a la carpeta `React` que se encuentra dentro de su repositorio por medio del comando `cd react` y ejecute el comando : `yarn install` el cual servira para instalar las dependencias necesarias. Una vez instalado vuelva al repositorio base con `cd ..`
 
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
+### Paso 4: Ejecutar el Preview de la tienda.
 
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
+En este paso se recomienda ejecutar `vtex whoami` para comprobar si se encuentra en su propio `workspace`.
 
-- `propName` object:
+Una vez listo ejecutar el comando `vtex link` dentro de la raiz de su proyecto. Este proceso instalara y vinculara nuestro app custom a nuestro proyecto base. Si no ocurre ningun error la consola mostrara el mensaje: `App linked successfully`
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+### Paso 5: Usar App custom en tienda base
 
+Para usar esta app custom en su tienda base es importante importarla en su proyecto base dentro de las dependencias:
+Ej: vendor.name: version
 
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
-
-## Modus Operandi *(not mandatory)*
-
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
-
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
-
-## Customization
-
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
-
-| CSS Handles |
-| ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
-
-
-If there are none, add the following sentence instead:
-
-`No CSS Handles are available yet for the app customization.`
-
-<!-- DOCS-IGNORE:start -->
-
-## Contributors ✨
-
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
-
-<!-- DOCS-IGNORE:end -->
-
----- 
-
-Check out some documentation models that are already live: 
-- [Breadcrumb](https://github.com/vtex-apps/breadcrumb)
-- [Image](https://vtex.io/docs/components/general/vtex.store-components/image)
-- [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
-- [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
-- [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)
+"dependencies": {
+"itgloberspartnercl.bullets-diagramation": "0.x"
+},

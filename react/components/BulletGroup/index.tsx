@@ -4,7 +4,7 @@ import { useListContext, ListContextProvider } from 'vtex.list-context'
 import { useCssHandles } from 'vtex.css-handles'
 
 import { BulletsSchema } from './BulletTypes'
-import { getBulletsAsJSXList } from './modules/bulletsAsLIst'
+import { getBulletsAsJSXList } from './modules/bulletAsList'
 
 export interface BulletGroupProps {
   bullets: BulletsSchema
